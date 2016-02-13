@@ -10,16 +10,16 @@
         <scene sceneID="KFl-Ex-dDF">
             <objects>
                 <tableViewController id="JOC-t2-O2b" customClass="ToDoTableViewController" customModule="testapp" customModuleProvider="target" sceneMemberID="viewController">
-                    <tableView key="view" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="90" sectionHeaderHeight="28" sectionFooterHeight="28" id="OUb-5B-rfv">
+                    <tableView key="view" clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" keyboardDismissMode="interactive" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="90" sectionHeaderHeight="28" sectionFooterHeight="28" id="OUb-5B-rfv">
                         <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                         <color key="separatorColor" red="0.5" green="0.0" blue="0.5" alpha="1" colorSpace="calibratedRGB"/>
                         <prototypes>
-                            <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="none" indentationWidth="10" reuseIdentifier="ToDoTableViewCell" rowHeight="90" id="Q2g-4G-bny" customClass="ToDoTableViewCell" customModule="testapp" customModuleProvider="target">
+                            <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" reuseIdentifier="ToDoTableViewCell" rowHeight="90" id="Q2g-4G-bny" customClass="ToDoTableViewCell" customModule="testapp" customModuleProvider="target">
                                 <rect key="frame" x="0.0" y="92" width="600" height="90"/>
                                 <autoresizingMask key="autoresizingMask"/>
-                                <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="Q2g-4G-bny" id="ye2-Qw-Qq9">
+                                <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="center" tableViewCell="Q2g-4G-bny" id="ye2-Qw-Qq9">
                                     <rect key="frame" x="0.0" y="0.0" width="600" height="89"/>
                                     <autoresizingMask key="autoresizingMask"/>
                                     <subviews>
@@ -29,34 +29,24 @@
                                             <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
                                             <nil key="highlightedColor"/>
                                         </label>
-                                        <stackView opaque="NO" contentMode="scaleToFill" misplaced="YES" distribution="equalSpacing" alignment="center" spacing="4" translatesAutoresizingMaskIntoConstraints="NO" id="np7-dT-p9l">
+                                        <stackView opaque="NO" userInteractionEnabled="NO" contentMode="scaleToFill" misplaced="YES" distribution="equalSpacing" alignment="center" spacing="4" translatesAutoresizingMaskIntoConstraints="NO" id="np7-dT-p9l">
                                             <rect key="frame" x="0.0" y="29" width="600" height="57"/>
                                             <subviews>
                                                 <textView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleToFill" misplaced="YES" editable="NO" text="Test description." textAlignment="natural" selectable="NO" translatesAutoresizingMaskIntoConstraints="NO" id="nZQ-fR-Vda">
-                                                    <rect key="frame" x="0.0" y="0.0" width="471" height="57"/>
+                                                    <rect key="frame" x="0.0" y="0.0" width="516" height="57"/>
                                                     <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
                                                     <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                                     <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
                                                 </textView>
                                                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" misplaced="YES" text="Date/Time" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="tNu-f0-Cgg">
-                                                    <rect key="frame" x="475" y="18" width="72" height="21"/>
+                                                    <rect key="frame" x="520" y="18" width="80" height="21"/>
                                                     <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                                     <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
                                                     <nil key="highlightedColor"/>
                                                 </label>
-                                                <switch opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="750" verticalHuggingPriority="750" contentHorizontalAlignment="center" contentVerticalAlignment="center" on="YES" translatesAutoresizingMaskIntoConstraints="NO" id="Q1i-s2-y53">
-                                                    <rect key="frame" x="551" y="13" width="51" height="31"/>
-                                                    <connections>
-                                                        <action selector="toggleSwitched:" destination="Q2g-4G-bny" eventType="valueChanged" id="8uu-ox-6Av"/>
-                                                    </connections>
-                                                </switch>
                                             </subviews>
                                             <constraints>
-                                                <constraint firstAttribute="bottom" secondItem="Q1i-s2-y53" secondAttribute="bottom" constant="29" id="2Ap-Vk-ZFR"/>
-                                                <constraint firstItem="Q1i-s2-y53" firstAttribute="leading" secondItem="np7-dT-p9l" secondAttribute="leading" constant="345" id="G2S-by-Qqw"/>
                                                 <constraint firstItem="tNu-f0-Cgg" firstAttribute="leading" secondItem="nZQ-fR-Vda" secondAttribute="trailing" id="GMH-tC-tlB"/>
-                                                <constraint firstAttribute="trailing" secondItem="Q1i-s2-y53" secondAttribute="trailing" constant="4" id="Tr6-US-8OW"/>
-                                                <constraint firstItem="Q1i-s2-y53" firstAttribute="centerX" secondItem="np7-dT-p9l" secondAttribute="centerX" id="YdG-ug-2fe"/>
                                                 <constraint firstItem="tNu-f0-Cgg" firstAttribute="centerY" secondItem="np7-dT-p9l" secondAttribute="centerY" id="ZYb-zD-Vlw"/>
                                                 <constraint firstItem="nZQ-fR-Vda" firstAttribute="height" secondItem="np7-dT-p9l" secondAttribute="height" id="eIr-xo-yrB"/>
                                                 <constraint firstItem="tNu-f0-Cgg" firstAttribute="leading" secondItem="nZQ-fR-Vda" secondAttribute="trailing" id="osS-7k-53p"/>
@@ -66,9 +56,6 @@
                                                 <mask key="constraints">
                                                     <exclude reference="GMH-tC-tlB"/>
                                                     <exclude reference="osS-7k-53p"/>
-                                                    <exclude reference="2Ap-Vk-ZFR"/>
-                                                    <exclude reference="G2S-by-Qqw"/>
-                                                    <exclude reference="YdG-ug-2fe"/>
                                                 </mask>
                                             </variation>
                                         </stackView>
@@ -81,6 +68,7 @@
                                     </constraints>
                                 </tableViewCellContentView>
                                 <color key="backgroundColor" red="1" green="0.0" blue="0.0" alpha="0.22" colorSpace="calibratedRGB"/>
+                                <gestureRecognizers/>
                                 <constraints>
                                     <constraint firstItem="np7-dT-p9l" firstAttribute="centerX" secondItem="Q2g-4G-bny" secondAttribute="centerX" id="GNr-5X-mLU"/>
                                     <constraint firstAttribute="bottom" secondItem="np7-dT-p9l" secondAttribute="bottom" constant="1" id="YwL-sn-bIJ"/>
@@ -89,8 +77,7 @@
                                     <outlet property="dateLabel" destination="tNu-f0-Cgg" id="ygc-Ln-NEe"/>
                                     <outlet property="infoTextView" destination="nZQ-fR-Vda" id="UQl-LN-mAP"/>
                                     <outlet property="titleLabel" destination="KKU-dd-Ec7" id="xip-57-cmz"/>
-                                    <outlet property="toggle" destination="Q1i-s2-y53" id="TTc-nz-ypg"/>
-                                    <segue destination="xhN-EH-CFe" kind="show" identifier="ShowDetail" id="iNF-lf-YjG"/>
+                                    <segue destination="xhN-EH-CFe" kind="show" identifier="ShowDetail" id="YEf-Yw-tTf"/>
                                 </connections>
                             </tableViewCell>
                         </prototypes>
@@ -126,7 +113,7 @@
                             <stackView opaque="NO" contentMode="scaleToFill" ambiguous="YES" misplaced="YES" axis="vertical" distribution="equalSpacing" alignment="center" translatesAutoresizingMaskIntoConstraints="NO" id="nIQ-AR-4aZ">
                                 <rect key="frame" x="0.0" y="64" width="600" height="600"/>
                                 <subviews>
-                                    <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" ambiguous="YES" misplaced="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Enter title here." textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="rAv-VI-GNC">
+                                    <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" ambiguous="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Enter title here." textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="rAv-VI-GNC">
                                         <rect key="frame" x="240" y="0.0" width="120" height="30"/>
                                         <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                         <textInputTraits key="textInputTraits"/>
@@ -137,7 +124,7 @@
                                         <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                         <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
                                     </textView>
-                                    <datePicker contentMode="scaleToFill" ambiguous="YES" misplaced="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" datePickerMode="dateAndTime" minuteInterval="1" translatesAutoresizingMaskIntoConstraints="NO" id="BdG-uy-L0B">
+                                    <datePicker contentMode="scaleToFill" ambiguous="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" datePickerMode="dateAndTime" minuteInterval="1" translatesAutoresizingMaskIntoConstraints="NO" id="BdG-uy-L0B">
                                         <rect key="frame" x="0.0" y="384" width="600" height="216"/>
                                         <date key="date" timeIntervalSinceReferenceDate="477022248.87295699">
                                             <!--2016-02-13 02:10:48 +0000-->
@@ -218,6 +205,6 @@
         </scene>
     </scenes>
     <inferredMetricsTieBreakers>
-        <segue reference="iNF-lf-YjG"/>
+        <segue reference="YEf-Yw-tTf"/>
     </inferredMetricsTieBreakers>
 </document>

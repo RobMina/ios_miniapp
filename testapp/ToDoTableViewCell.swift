@@ -25,11 +25,9 @@ class ToDoTableViewCell: UITableViewCell {
     override func setSelected(selected: Bool, animated: Bool) {
         super.setSelected(selected, animated: animated)
 
+        //print("In TableViewCell.setSelected. title: " + titleLabel.text! + " selected: " + String(selected))
+        
         // Configure the view for the selected state
-    }
-    
-    
-    @IBAction func toggleSwitched(sender: UISwitch) {
     }
 
 }

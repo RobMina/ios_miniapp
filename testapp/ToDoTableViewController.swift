@@ -12,6 +12,7 @@ class ToDoTableViewController: UITableViewController {
     
     //Mark: Properties
     var items = [ToDoItem?] ()
+    //var chosenCellIndex = 0
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -56,15 +57,33 @@ class ToDoTableViewController: UITableViewController {
         let item=items[indexPath.row]
         let dateFormatter = NSDateFormatter()
         
-        dateFormatter.dateFormat = "HH:mm:ss"
+        dateFormatter.dateFormat = "MM/dd/YY HH:mm:ss"
         let dateString = dateFormatter.stringFromDate((item?.duedate)!)
         
         cell.infoTextView.text = item?.description
         cell.titleLabel.text = item?.title
-        cell.toggle.setOn((item?.toggled)!, animated: false)
+//        cell.toggle.setOn((item?.toggled)!, animated: false)
         cell.dateLabel.text = dateString
         
         return cell
+    }
+    
+    override func tableView(tableView: UITableView, canEditRowAtIndexPath indexPath: NSIndexPath) -> Bool {
+        // let the controller to know that able to edit tableView's row
+        return true
+    }
+    
+    override func tableView(tableView: UITableView, editActionsForRowAtIndexPath indexPath: NSIndexPath) -> [UITableViewRowAction]?  {
+        // add the action button you want to show when swiping on tableView's cell , in this case add the delete button.
+        let deleteAction = UITableViewRowAction(style: .Default, title: "Delete", handler: { (action , indexPath) -> Void in
+            self.items.removeAtIndex(indexPath.row)
+            tableView.deleteRowsAtIndexPaths([indexPath], withRowAnimation: .Fade)
+        })
+        
+        // You can set its properties like normal button
+        deleteAction.backgroundColor = UIColor.redColor()
+        
+        return [deleteAction]
     }
     
 

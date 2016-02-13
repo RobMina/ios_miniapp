@@ -57,7 +57,12 @@ class AddItemViewController: UIViewController, UITextFieldDelegate {
     // MARK: - Navigation
 
     @IBAction func cancel(sender: UIBarButtonItem) {
-        dismissViewControllerAnimated(true, completion: nil)
+        let isPresentingInAddItemMode = presentingViewController is UINavigationController
+        if (isPresentingInAddItemMode) {
+            dismissViewControllerAnimated(true, completion: nil)
+        } else {
+            navigationController!.popViewControllerAnimated(true)
+        }
     }
     override func prepareForSegue(segue: UIStoryboardSegue, sender: AnyObject?) {
         if saveButton === sender {
