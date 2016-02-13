@@ -103,14 +103,35 @@ class ToDoTableViewController: UITableViewController {
     }
     */
 
-    /*
+    
     // MARK: - Navigation
-
-    // In a storyboard-based application, you will often want to do a little preparation before navigation
-    override func prepareForSegue(segue: UIStoryboardSegue, sender: AnyObject?) {
-        // Get the new view controller using segue.destinationViewController.
-        // Pass the selected object to the new view controller.
+    @IBAction func unwindToToDoList(sender: UIStoryboardSegue) {
+        print("Inside unwindToToDoList")
+        if let sourceViewController = sender.sourceViewController as? AddItemViewController, item=sourceViewController.item {
+            if let selectedIndexPath = tableView.indexPathForSelectedRow {
+                items[selectedIndexPath.row] = item
+                tableView.reloadRowsAtIndexPaths([selectedIndexPath], withRowAnimation: .None)
+            } else {
+                let newIndexPath = NSIndexPath(forRow: items.count, inSection: 0)
+                items.append(item)
+                tableView.insertRowsAtIndexPaths([newIndexPath], withRowAnimation: .Bottom)
+            }
+        }
     }
-    */
+    
+    override func prepareForSegue(segue: UIStoryboardSegue, sender: AnyObject?) {
+        if segue.identifier == "ShowDetail" {
+            print("Inside prepareForSegue")
+            let itemDetailViewController = segue.destinationViewController as! AddItemViewController
+            if let selectedItemCell = sender as? ToDoTableViewCell {
+                let indexPath = tableView.indexPathForCell(selectedItemCell)!
+                let selectedItem = items[indexPath.row]
+                itemDetailViewController.item = selectedItem
+            }
+        }
+        else if segue.identifier == "AddItem" {
+        }
+    }
+    
 
 }
