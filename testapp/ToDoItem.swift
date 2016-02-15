@@ -25,6 +25,9 @@ class ToDoItem {
         if title.isEmpty || duedate.timeIntervalSinceDate(NSDate.init()) < 0 {
             return nil
         }
+        if description == "Enter a brief description here." {
+            self.description = ""
+        }
     }
     
     

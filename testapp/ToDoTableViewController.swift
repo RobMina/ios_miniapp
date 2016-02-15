@@ -13,17 +13,23 @@ class ToDoTableViewController: UITableViewController {
     //Mark: Properties
     var items = [ToDoItem?] ()
     //var chosenCellIndex = 0
+    @IBOutlet var itemsTableView: UITableView!
     
     override func viewDidLoad() {
         super.viewDidLoad()
 
-        loadItems()
+        //loadItems()
         
         // Uncomment the following line to preserve selection between presentations
         // self.clearsSelectionOnViewWillAppear = false
 
         // Uncomment the following line to display an Edit button in the navigation bar for this view controller.
         // self.navigationItem.rightBarButtonItem = self.editButtonItem()
+    }
+    
+    func sortItems() {
+        // sort todo items by time
+        items.sortInPlace() { $0!.duedate.compare($1!.duedate) == NSComparisonResult.OrderedAscending }
     }
     
     func loadItems() {
@@ -57,7 +63,7 @@ class ToDoTableViewController: UITableViewController {
         let item=items[indexPath.row]
         let dateFormatter = NSDateFormatter()
         
-        dateFormatter.dateFormat = "MM/dd/YY HH:mm:ss"
+        dateFormatter.dateFormat = "MM/dd/YY HH:mm"
         let dateString = dateFormatter.stringFromDate((item?.duedate)!)
         
         cell.infoTextView.text = item?.description
@@ -125,7 +131,7 @@ class ToDoTableViewController: UITableViewController {
     
     // MARK: - Navigation
     @IBAction func unwindToToDoList(sender: UIStoryboardSegue) {
-        print("Inside unwindToToDoList")
+        //print("Inside unwindToToDoList")
         if let sourceViewController = sender.sourceViewController as? AddItemViewController, item=sourceViewController.item {
             if let selectedIndexPath = tableView.indexPathForSelectedRow {
                 items[selectedIndexPath.row] = item
@@ -136,11 +142,13 @@ class ToDoTableViewController: UITableViewController {
                 tableView.insertRowsAtIndexPaths([newIndexPath], withRowAnimation: .Bottom)
             }
         }
+        sortItems()
+        itemsTableView.reloadData()
     }
     
     override func prepareForSegue(segue: UIStoryboardSegue, sender: AnyObject?) {
         if segue.identifier == "ShowDetail" {
-            print("Inside prepareForSegue")
+            //print("Inside prepareForSegue")
             let itemDetailViewController = segue.destinationViewController as! AddItemViewController
             if let selectedItemCell = sender as? ToDoTableViewCell {
                 let indexPath = tableView.indexPathForCell(selectedItemCell)!
