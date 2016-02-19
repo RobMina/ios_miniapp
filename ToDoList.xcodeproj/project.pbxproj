@@ -18,7 +18,7 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
-		0F188A3C1C69635E00B5EE3F /* testapp.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = testapp.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		0F188A3C1C69635E00B5EE3F /* ToDoList.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = ToDoList.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		0F188A3F1C69635E00B5EE3F /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		0F188A441C69635E00B5EE3F /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		0F188A461C69635E00B5EE3F /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
@@ -44,7 +44,7 @@
 		0F188A331C69635D00B5EE3F = {
 			isa = PBXGroup;
 			children = (
-				0F188A3E1C69635E00B5EE3F /* testapp */,
+				0F188A3E1C69635E00B5EE3F /* ToDoList */,
 				0F188A3D1C69635E00B5EE3F /* Products */,
 			);
 			sourceTree = "<group>";
@@ -52,12 +52,12 @@
 		0F188A3D1C69635E00B5EE3F /* Products */ = {
 			isa = PBXGroup;
 			children = (
-				0F188A3C1C69635E00B5EE3F /* testapp.app */,
+				0F188A3C1C69635E00B5EE3F /* ToDoList.app */,
 			);
 			name = Products;
 			sourceTree = "<group>";
 		};
-		0F188A3E1C69635E00B5EE3F /* testapp */ = {
+		0F188A3E1C69635E00B5EE3F /* ToDoList */ = {
 			isa = PBXGroup;
 			children = (
 				0F188A3F1C69635E00B5EE3F /* AppDelegate.swift */,
@@ -70,15 +70,16 @@
 				0F3121491C6EBF0900CB5847 /* ToDoTableViewController.swift */,
 				0F31214B1C6EC94F00CB5847 /* AddItemViewController.swift */,
 			);
+			name = ToDoList;
 			path = testapp;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
-		0F188A3B1C69635E00B5EE3F /* testapp */ = {
+		0F188A3B1C69635E00B5EE3F /* ToDoList */ = {
 			isa = PBXNativeTarget;
-			buildConfigurationList = 0F188A4E1C69635E00B5EE3F /* Build configuration list for PBXNativeTarget "testapp" */;
+			buildConfigurationList = 0F188A4E1C69635E00B5EE3F /* Build configuration list for PBXNativeTarget "ToDoList" */;
 			buildPhases = (
 				0F188A381C69635E00B5EE3F /* Sources */,
 				0F188A391C69635E00B5EE3F /* Frameworks */,
@@ -88,9 +89,9 @@
 			);
 			dependencies = (
 			);
-			name = testapp;
+			name = ToDoList;
 			productName = testapp;
-			productReference = 0F188A3C1C69635E00B5EE3F /* testapp.app */;
+			productReference = 0F188A3C1C69635E00B5EE3F /* ToDoList.app */;
 			productType = "com.apple.product-type.application";
 		};
 /* End PBXNativeTarget section */
@@ -105,10 +106,11 @@
 				TargetAttributes = {
 					0F188A3B1C69635E00B5EE3F = {
 						CreatedOnToolsVersion = 7.1;
+						DevelopmentTeam = 6NG74MVCF4;
 					};
 				};
 			};
-			buildConfigurationList = 0F188A371C69635E00B5EE3F /* Build configuration list for PBXProject "testapp" */;
+			buildConfigurationList = 0F188A371C69635E00B5EE3F /* Build configuration list for PBXProject "ToDoList" */;
 			compatibilityVersion = "Xcode 3.2";
 			developmentRegion = English;
 			hasScannedForEncodings = 0;
@@ -121,7 +123,7 @@
 			projectDirPath = "";
 			projectRoot = "";
 			targets = (
-				0F188A3B1C69635E00B5EE3F /* testapp */,
+				0F188A3B1C69635E00B5EE3F /* ToDoList */,
 			);
 		};
 /* End PBXProject section */
@@ -262,10 +264,12 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_IDENTITY = "iPhone Developer";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
 				INFOPLIST_FILE = testapp/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
-				PRODUCT_BUNDLE_IDENTIFIER = ed.virginia.testapp;
-				PRODUCT_NAME = "$(TARGET_NAME)";
+				PRODUCT_BUNDLE_IDENTIFIER = edu.virginia.todolist;
+				PRODUCT_NAME = ToDoList;
+				PROVISIONING_PROFILE = "";
 			};
 			name = Debug;
 		};
@@ -274,17 +278,19 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_IDENTITY = "iPhone Developer";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
 				INFOPLIST_FILE = testapp/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
-				PRODUCT_BUNDLE_IDENTIFIER = ed.virginia.testapp;
-				PRODUCT_NAME = "$(TARGET_NAME)";
+				PRODUCT_BUNDLE_IDENTIFIER = edu.virginia.todolist;
+				PRODUCT_NAME = ToDoList;
+				PROVISIONING_PROFILE = "";
 			};
 			name = Release;
 		};
 /* End XCBuildConfiguration section */
 
 /* Begin XCConfigurationList section */
-		0F188A371C69635E00B5EE3F /* Build configuration list for PBXProject "testapp" */ = {
+		0F188A371C69635E00B5EE3F /* Build configuration list for PBXProject "ToDoList" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
 				0F188A4C1C69635E00B5EE3F /* Debug */,
@@ -293,7 +299,7 @@
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
 		};
-		0F188A4E1C69635E00B5EE3F /* Build configuration list for PBXNativeTarget "testapp" */ = {
+		0F188A4E1C69635E00B5EE3F /* Build configuration list for PBXNativeTarget "ToDoList" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
 				0F188A4F1C69635E00B5EE3F /* Debug */,

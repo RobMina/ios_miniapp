@@ -9,14 +9,14 @@
         <!--ToDo Items-->
         <scene sceneID="KFl-Ex-dDF">
             <objects>
-                <tableViewController id="JOC-t2-O2b" customClass="ToDoTableViewController" customModule="testapp" customModuleProvider="target" sceneMemberID="viewController">
+                <tableViewController id="JOC-t2-O2b" customClass="ToDoTableViewController" customModule="ToDoList" customModuleProvider="target" sceneMemberID="viewController">
                     <tableView key="view" clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" keyboardDismissMode="interactive" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="90" sectionHeaderHeight="28" sectionFooterHeight="28" id="OUb-5B-rfv">
                         <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                         <color key="separatorColor" red="0.5" green="0.0" blue="0.5" alpha="1" colorSpace="calibratedRGB"/>
                         <prototypes>
-                            <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" reuseIdentifier="ToDoTableViewCell" rowHeight="90" id="Q2g-4G-bny" customClass="ToDoTableViewCell" customModule="testapp" customModuleProvider="target">
+                            <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" reuseIdentifier="ToDoTableViewCell" rowHeight="90" id="Q2g-4G-bny" customClass="ToDoTableViewCell" customModule="ToDoList" customModuleProvider="target">
                                 <rect key="frame" x="0.0" y="92" width="600" height="90"/>
                                 <autoresizingMask key="autoresizingMask"/>
                                 <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="center" tableViewCell="Q2g-4G-bny" id="ye2-Qw-Qq9">
@@ -104,12 +104,12 @@
         <!--Add ToDo Item-->
         <scene sceneID="HeJ-jG-D9V">
             <objects>
-                <viewController id="xhN-EH-CFe" customClass="AddItemViewController" customModule="testapp" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController id="xhN-EH-CFe" customClass="AddItemViewController" customModule="ToDoList" customModuleProvider="target" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="QJN-J0-wXr"/>
                         <viewControllerLayoutGuide type="bottom" id="cZn-kb-Hqd"/>
                     </layoutGuides>
-                    <view key="view" contentMode="scaleToFill" id="IZC-Nj-r6U">
+                    <view key="view" contentMode="scaleToFill" id="IZC-Nj-r6U" customClass="UIControl">
                         <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
@@ -117,12 +117,16 @@
                                 <rect key="frame" x="0.0" y="64" width="600" height="600"/>
                                 <subviews>
                                     <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" ambiguous="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Enter title here." textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="rAv-VI-GNC">
-                                        <rect key="frame" x="240" y="0.0" width="120" height="30"/>
+                                        <rect key="frame" x="180" y="0.0" width="240" height="60"/>
+                                        <constraints>
+                                            <constraint firstAttribute="height" constant="60" id="nTC-aH-Kej"/>
+                                            <constraint firstAttribute="width" constant="240" id="saX-kY-npM"/>
+                                        </constraints>
                                         <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                         <textInputTraits key="textInputTraits"/>
                                     </textField>
                                     <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" ambiguous="YES" misplaced="YES" text="Enter a brief description here." textAlignment="natural" translatesAutoresizingMaskIntoConstraints="NO" id="y1S-Dk-YH0">
-                                        <rect key="frame" x="0.0" y="143" width="600" height="128"/>
+                                        <rect key="frame" x="0.0" y="158" width="600" height="128"/>
                                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                         <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                         <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
@@ -145,6 +149,9 @@
                             <constraint firstItem="nIQ-AR-4aZ" firstAttribute="width" secondItem="IZC-Nj-r6U" secondAttribute="width" id="FOF-rb-ych"/>
                             <constraint firstItem="nIQ-AR-4aZ" firstAttribute="height" secondItem="IZC-Nj-r6U" secondAttribute="height" id="UDH-Sk-vx0"/>
                         </constraints>
+                        <connections>
+                            <action selector="userTappedBackground:" destination="xhN-EH-CFe" eventType="touchDown" id="Jyc-sc-6D0"/>
+                        </connections>
                     </view>
                     <navigationItem key="navigationItem" title="Add ToDo Item" id="Lfj-Dk-QxW">
                         <barButtonItem key="leftBarButtonItem" systemItem="save" id="vXp-cs-Ugv">

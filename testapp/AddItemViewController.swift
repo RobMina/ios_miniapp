@@ -8,7 +8,7 @@
 
 import UIKit
 
-class AddItemViewController: UIViewController, UITextFieldDelegate {
+class AddItemViewController: UIViewController, UITextFieldDelegate, UITextViewDelegate {
 
     //MARK: Properties
     
@@ -23,6 +23,7 @@ class AddItemViewController: UIViewController, UITextFieldDelegate {
         super.viewDidLoad()
 
         titleField.delegate = self
+        descriptionTextView.delegate = self
         
         if let item = item {
             navigationItem.title = item.title
@@ -52,6 +53,23 @@ class AddItemViewController: UIViewController, UITextFieldDelegate {
         checkValidTitle()
         navigationItem.title = textField.text
     }
+    func textFieldShouldReturn(textField: UITextField) -> Bool {
+        textField.resignFirstResponder()
+        return true;
+    }
+    func textView(textView: UITextView, shouldChangeTextInRange range: NSRange, replacementText text: String) -> Bool {
+        if(text == "\n") {
+            textView.resignFirstResponder()
+            return false
+        }
+        return true
+    }
+    func textViewDidBeginEditing(textView: UITextView) {
+        if (textView.text == "Enter a brief description here.") {
+            textView.text = ""
+        }
+    }
+
     
     
     // MARK: - Navigation
@@ -74,6 +92,11 @@ class AddItemViewController: UIViewController, UITextFieldDelegate {
                 duedate: duedate)
             
         }
+    }
+    
+    @IBAction func userTappedBackground(sender: AnyObject) {
+        print("In userTappedBackground.")
+        view.endEditing(true)
     }
     
 
