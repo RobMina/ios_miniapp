@@ -58,7 +58,7 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
                     }
                     alertController.addAction(UIAlertAction(title: "dismiss", style: UIAlertActionStyle.Default, handler: nil))
                     alertController.addAction(UIAlertAction(title: "postpone", style:UIAlertActionStyle.Default, handler: postponeActionHandler))
-                    theController.presentViewController(alertController, animated: false, completion: nil)
+                    navigationController.visibleViewController!.presentViewController(alertController, animated: false, completion: nil)
                     // remove from list
                     theController.items.removeFirst()
                     theController.itemsTableView.reloadData()
